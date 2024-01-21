@@ -10,9 +10,9 @@ spec:
       targetPort: vproapp-port
       protocol: TCP
   type: NodePort
-<<<<<<< HEAD
- 
-=======
 
->>>>>>> ddb6f99911ff59f124a216d96e39376fc37a10b8
+ 
+
+
+
 
