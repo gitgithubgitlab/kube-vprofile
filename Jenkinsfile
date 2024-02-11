@@ -1,7 +1,7 @@
 pipeline{
     agent any
     environment{
-        registry = "kubeimran/vproappdock"
+        registry = "vdockh090/vproappcicd"
         registryCredential = 'dockerhub'
     }
     
@@ -79,5 +79,5 @@ pipeline{
         }
 
     }
-}
+
 
