@@ -17,7 +17,7 @@ spec:
       containers:
         - name: vproapp
 #          image: vprofile/vprofileapp:V1
-          image: {{ .Values.appimage}}
+          image: {{ .Values.appimage }}
           # resources:
           #   limits:
           #     memory: "512Mi"
