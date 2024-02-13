@@ -37,7 +37,7 @@ pipeline{
             }
             post{
                 success{
-                    echo "Generated Analysis Results"
+                    echo "Generated ALL Analysis Results"
                 }                
             }
         }
