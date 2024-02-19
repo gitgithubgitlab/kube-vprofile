@@ -1,0 +1,37 @@
+
+# worker does not have a service
+# worker is built on dotnet
+# it directly connects to redis to get the data and inputs that to the db
+# once the worker app is deployed, it keeps the connection to redis and db alive, 
+# so that any updates happen in redis it collects the data and inputs that to the db.
+# worker connects to the redis service --> redis and db service --> db which in turn connects to the respective applications.
+
+
+# apiVersion: v1
+# kind: Service
+# metadata:
+#   name: vpromq01
+# spec:
+#   selector:
+#     app: vpromq01
+#   ports:
+#     - port: 15672
+#       targetPort: vpromq01-port
+#       protocol: TCP
+#   type: ClusterIP
+
+
+# apiVersion: v1
+# kind: Service
+# metadata:
+#   name: worker-service
+# spec:
+#   selector:
+#     matchLabels:
+#       app: worker-app
+#   ports:
+#     - port: 
+#       targetPort: worker-app-port
+#       protocol: TCP
+#   type: ClusterIP
+

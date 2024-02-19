@@ -1,0 +1,57 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: worker
+  labels:
+    app: worker
+spec:
+  selector:
+    matchLabels:
+      app: worker
+  replicas: 1      
+  template:
+    metadata:
+      labels:
+        app: worker
+    spec:
+      containers:
+        - name: worker
+          image: dockersamples/examplevotingapp_worker
+
+
+
+# apiVersion: apps/v1
+# kind: Deployment
+# metadata:
+#   name: vpromq01
+#   labels:
+#     app: vpromq01
+# spec:
+#   selector:
+#     matchLabels:
+#       app: vpromq01
+#   replicas: 1      
+#   template:
+#     metadata:
+#       labels:
+#         app: vpromq01
+#     spec:
+#       containers:
+#       - name: vpromq01
+#         image: rabbitmq
+#         # resources:
+#           # limits:
+#             # memory: "128Mi"
+#             # cpu: "500m"
+#         ports:
+#           - name: vpromq01-port
+#             containerPort: 15672
+#         env:
+#           - name: RABBITMQ_DEFAULT_PASS
+#             valueFrom:
+#               secretKeyRef:
+#                 name: app-secret
+#                 key: rmq-pass
+#           - name: RABBITMQ_DEFAULT_USER
+#             value: "guest"
+            
